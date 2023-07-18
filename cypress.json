@@ -1,6 +1,4 @@
 {
-    "baseUrl": "https://www.tutorialspoint.com/html/html_iframes.htm",
-    "testFiles":"**/*.feature",
-    "screnshotsFolder": "cypress/screenshots",
-    "trashAssetsBeforeRuns": true
+    "baseUrl": "https://www.tutorialspoint.com/html/html_iframes.htm#",
+    "testFiles":"**/*.feature"
 }

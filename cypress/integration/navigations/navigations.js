@@ -1,11 +1,17 @@
 import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps";
 
+const navigations = require('../../support/pages/IframePage');
+
+beforeEach(() => {
+    cy.viewport(1600, 720);
+});
+
 Given('I open the tutorialspoint website', () => {
     cy.visit('/');
 });
 
 When('I navigate to the page under Document content goes here... section', () => {
-
+    navigations.navigateToIframe();
 });
 
 When('I click on the About us link', () => {
