@@ -3,6 +3,10 @@ import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps";
 const navigations = require('../../support/pages/IframePage');
 const login = require('../../support/pages/loginPage');
 
+beforeEach(() => {
+    cy.viewport(1600, 720);
+});
+
 Given('I am on the login page', () => {
     cy.visit('/');
     navigations.clickOnLoginOption();
