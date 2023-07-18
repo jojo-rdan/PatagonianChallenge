@@ -17,3 +17,5 @@ class loginPage {
         this.elements.loginBtn().click();
     }
 }
+
+module.exports = new loginPage();
