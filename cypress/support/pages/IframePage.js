@@ -12,11 +12,11 @@ class iFramePage {
     }
 
     navigateToIframe(){
-        cy.iframe(this.elements.iframeSection())
+        this.elements.iframeSection()
             .its('0.contentDocument') 
             .its('body')
-            .should('be.visible')
-            .then(cy.wrap);
+            .should('be.visible')     
+            .then(cy.wrap)  
     }
 
     clickOnAboutUsOption(){
@@ -33,25 +33,24 @@ class iFramePage {
     }
 
     listOfURLs(){
-        cy.get('a').each(($a) => {
-            const url = $a.attr('href');
-            if(url){
-                console.log('URL:', url);
-            }
+        cy.get('a[href]').each((item) => {
+            cy.log('URL:' + item.prop('href'))
+            console.log('URL: ' + item.prop('href'));
+
         })
     }
 
     listOfButtons(){
-        cy.get('button').each(($button) => {
-            const button = $button.text();
-            console.log('Button:', button);
+        cy.get('.btn').each((btn) => {
+            cy.log('Button: ' + btn.prop('href'))
+            console.log('Button: ' + btn.prop('href'));
         })
     }
 
     listOfTextInputFields(){
-        cy.get('input[type="text"]').each(($input) => {
-            const inputName = $input.attr('name');
-            console.log('Text Input Field:', inputName);
+        cy.get('input.form-control').each((input) => {
+            cy.log('Text Input Field: ' + input.prop('href'))
+            console.log('Text Input Field: ' + input.prop('href'));
         })
     }
 }

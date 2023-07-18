@@ -13,8 +13,6 @@
 <h2>How to run the project</h2>
 <ul>
   <li>clone the repo</li>
-  <li>npm install on the project</li>
-  <li>run npx cypress open</li>
-  <li>select the e2e execution process on the cypress dashboard</li>
-  <li>run the tests on chrome for greater pleasure</li>
+  <li>"npm install" on the project</li>
+  <li>run "npm run open"</li>
 </ul>
