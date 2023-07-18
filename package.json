@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jojo-rdan/PatagonianChallenge#readme",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
   }
 }
