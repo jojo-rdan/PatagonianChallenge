@@ -1,0 +1,23 @@
+{
+  "name": "patagonianchallenge",
+  "version": "1.0.0",
+  "description": "<h3>+ The challenge is to create an interaction with a website where:</h3>\r <ul>\r   <li>the URL tutorialspoint.com/html/html_iframes.htm is loaded and the program navigates into the page below “Document content goes here…“</li>\r   <li>interacts with the “About us” link</li>\r   <li>returns the URL of the new page</li>\r   <li>list all URLs on the page</li>\r   <li>list all buttons on the page</li>\r   <li>list all text input fields on the page</li>\r   <li>creates an account and logs into the site.</li>\r </ul>\r   <h3>+ The output should be both via console and output to the appended file</h3>\r <h2>How to run the project</h2>\r <ul>\r   <li>clone the repo</li>\r   <li>npm install on the project</li>\r   <li>run npx cypress open</li>\r   <li>select the e2e execution process on the cypress dashboard</li>\r   <li>run the tests on chrome for greater pleasure</li>\r </ul>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojo-rdan/PatagonianChallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jojo-rdan/PatagonianChallenge/issues"
+  },
+  "homepage": "https://github.com/jojo-rdan/PatagonianChallenge#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
