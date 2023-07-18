@@ -7,8 +7,8 @@ class iFramePage {
 
     elements = {
         iframeSection: () => cy.get("iframe.result"),
-        aboutUsOption: () => cy.xpath("//a[@href='/about/index.htm']"),
-        loginBtn: () => cy.get(".navbar-nav.d-lg-inline-block.nav-login")
+        aboutUsOption: () => cy.xpath("//a[@href='/about/index.htm']").first(),
+        loginBtn: () => cy.get(".navbar-nav.d-lg-inline-block.nav-login"),
     }
 
     navigateToIframe(){
@@ -21,10 +21,38 @@ class iFramePage {
 
     clickOnAboutUsOption(){
         this.elements.aboutUsOption().click();
+
+    }
+
+    validateAboutUsOption(){
+        cy.url().should('eq', 'https://www.tutorialspoint.com/about/index.htm');
     }
 
     clickOnLoginOption(){
         this.elements.loginBtn().click();
+    }
+
+    listOfURLs(){
+        cy.get('a').each(($a) => {
+            const url = $a.attr('href');
+            if(url){
+                console.log('URL:', url);
+            }
+        })
+    }
+
+    listOfButtons(){
+        cy.get('button').each(($button) => {
+            const button = $button.text();
+            console.log('Button:', button);
+        })
+    }
+
+    listOfTextInputFields(){
+        cy.get('input[type="text"]').each(($input) => {
+            const inputName = $input.attr('name');
+            console.log('Text Input Field:', inputName);
+        })
     }
 }
 

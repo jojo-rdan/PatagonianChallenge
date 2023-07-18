@@ -15,22 +15,22 @@ When('I navigate to the page under Document content goes here... section', () =>
 });
 
 When('I click on the About us link', () => {
-
+    navigations.clickOnAboutUsOption();
 });
 
 Then('I should return the url of the new page', () => {
-    
+    navigations.validateAboutUsOption();
 });
 
 And('I should see a list of all URLs on the page', () => {
-    
+    navigations.listOfURLs();
 });
 
 And('I should see a list of all buttons on the page', () => {
-    
+    navigations.listOfButtons();
 });
 
 And('I should see a list of all text input fields on the page', () => {
-    
+    navigations.listOfTextInputFields();
 });
 
