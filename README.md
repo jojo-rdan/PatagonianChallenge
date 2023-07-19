@@ -14,5 +14,6 @@
 <ul>
   <li>clone the repo</li>
   <li>"npm install" on the project</li>
-  <li>run "npm run open"</li>
+  <li>run "npm run open" to open the cypress UI</li>
+  <li>or "npm test" to run the tests</li>
 </ul>
