@@ -33,7 +33,7 @@ class createAccount {
             cy.reload()
             cy.get(".ycptinput").should('be.visible');
             cy.get('input.ycptinput').clear().type(email);
-            cy.get('#refreshbut').click().wait(10000);
+            cy.get('#refreshbut').click().wait(35000);
 
             cy.get('#refresh').click().wait(2000);
             cy.get('iframe#ifinbox')
