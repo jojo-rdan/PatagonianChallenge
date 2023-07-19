@@ -6,27 +6,36 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 class createAccount {
     elements = {
         fullNameInput: () => cy.get("#textRegName"),
-        countryCode: () => cy.get("country_code"),
+        countryCode: () => cy.get("select"),
         cellPhone: () => cy.get("#phone"),
         email: () => cy.get("input#textSRegEmail"),
         password: () => cy.get("input#user_password"),
-        loginButton: () => cy.get("button#signUpNew")
+        loginButton: () => cy.get("button#signUpNew"),
+        emailValidator: () => cy.get("a#validate_email_id"),
+        msg: () => cy.get('.toast-message')
     }
 
     createAnAccount(fullName, countryCode, cellPhone, email, password){
-        this.elements.fullNameInput().type(fullName),
-        this.elements.countryCode().select(countryCode).should('have.value', '57'),
-        this.elements.cellPhone().type(cellPhone),
-        this.elements.email().type(email),
-        this.elements.password().type(password)
 
-        cy.visit('https://yopmail.com/es/');
-        cy.origin('https://yopmail.com/es/', { args: sentArg }, ({ email }) => { 
+        const sentArg = {email: email }; 
+        Cypress.env('password', password);
+
+        this.elements.fullNameInput().type(fullName).wait(1000),
+        this.elements.countryCode().select(countryCode).should('have.value', '57'),
+        this.elements.cellPhone().type(cellPhone).wait(1000),
+        this.elements.email().type(email).wait(1000),
+        this.elements.password().type(password).wait(1000),
+        this.elements.emailValidator().wait(1000).should('be.visible').click(),
+        this.elements.msg().wait(1000).should('be.visible')
+        
+        cy.origin('https://yopmail.com/es/', { args: sentArg }, ({ email }) => {
+            cy.visit('https://yopmail.com/es/');
             cy.reload()
             cy.get(".ycptinput").should('be.visible');
             cy.get('input.ycptinput').clear().type(email);
-            cy.get('#refreshbut').click().wait(1000) 
+            cy.get('#refreshbut').click().wait(10000);
 
+            cy.get('#refresh').click().wait(2000);
             cy.get('iframe#ifinbox')
                 .its('0.contentDocument') 
                 .its('body')

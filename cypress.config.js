@@ -11,6 +11,12 @@ module.exports = defineConfig({
     trashAssetsBeforeRuns: false,
     baseUrl: 'https://www.tutorialspoint.com/html/html_iframes.htm#',
     specPattern: "cypress/integration/*.feature",
+    pageLoadTimeout: 30000, 
+    experimentalModifyObstructiveThirdPartyCode: false,
+    modifyobstructivecode: false,
+    experimentalStudio: true,
+    experimentalSessionAndOrigin: true,
+    defaultCommandTimeout: 10000,
     blockHosts: [
       "*hsappstatic.net",
       "*hubspot.com",

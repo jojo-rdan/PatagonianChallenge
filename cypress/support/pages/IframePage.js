@@ -8,7 +8,7 @@ class iFramePage {
     elements = {
         iframeSection: () => cy.get("iframe.result"),
         aboutUsOption: () => cy.xpath("//a[@href='/about/index.htm']").first(),
-        loginBtn: () => cy.get(".navbar-nav.d-lg-inline-block.nav-login"),
+        loginBtn: () => cy.get(".btn.mb-0"),
     }
 
     navigateToIframe(){
@@ -29,7 +29,9 @@ class iFramePage {
     }
 
     clickOnLoginOption(){
-        this.elements.loginBtn().click();
+        this.elements.loginBtn().first()
+        .should('contain.text', 'Login')
+        .click().wait(2000);
     }
 
     listOfURLs(){
